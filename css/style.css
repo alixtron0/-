@@ -17,6 +17,21 @@ body{
 
 /*Header*/
 
+/* Fix for Safari's weird font rendering */
+body {
+	-webkit-font-smoothing: antialias;
+  }
+  
+  /* Fix for Safari's overflow issues */
+  .container {
+	overflow-x: hidden;
+  }
+  
+  /* Fix for Safari's scrolling issues */
+  body, html {
+	-webkit-overflow-scrolling: touch;
+  }
+
 
 
 header{
@@ -1048,13 +1063,13 @@ flex: 0 0 100%;
 	margin-top: 20px;
 	font-size: 18px;
 	font-weight: bold;
-	color: #666;
+	color: #ffffff;
   }
   
   #bmi-result {
 	font-size: 24px;
 	font-weight: bold;
-	color: #333;
+	color: #ffffff;
   }
 
 
