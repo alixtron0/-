@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<title>Style Gym</title>
+	<meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+	<meta charset="UTF-8">
+	<meta name="description" content="Style Gym - باشگاه استایل">
+	<meta name="keywords" content=" باشگاه بدنسازی استایل, باشگاه استایل, باشگاه بدنسازی, باشگاه یوگا">
+	<meta name="author" content="علی فراست">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+    .wow:first-child {
+      visibility: hidden;
+    }
+  </style>
+  
+</head>
+<body>
+ 
+ <!-- Start Header  -->
+ <header>
+	<div class="container">
+		<div class="logo">
+			 <a href="">Style <span>GYM</span></a>
+		</div>
+		<a href="javascript:void(0)" class="ham-burger">
+		  <span></span>	
+		  <span></span>
+		</a>
+		<div class="nav">
+			<ul>
+				<li><a href="index.html#home">خانه</a></li>
+				<li><a href="index.html#bano">سانس بانوان</li>
+				<li><a href="index.html#agha">سانس اقایان</li>
+				<li><a href="index.html#mbi">محاسبه سلامتی</a></li>
+				<li><a href="product.html">مکمل ورزشی</a></li>
+				<li><a href="index.html#contact">راه های ارتباطی</a></li>
+				
+			</ul>
+		</div>
+	</div>
+ </header>
+
+<!-- text-->
+<section class="phome wow flash" id="home">
+    <div class="container">
+          <h1 dir="rtl" class="wow slideInLeft" data-wow-delay="1s"><span></span></h1>
+          <h1 dir="rtl" class="wow slideInRight" data-wow-delay="1s">مکمل های <span>ورزشی</span></h1>
+         
+    </div>
+ 
+</section>
+
+<!-- Add a modal box to your HTML code -->
+
+
+<!-- Products Section -->
+<section class="products" id="products">
+    <div class="container">
+      <h2>محصولات ما</h2>
+      <div class="product-grid">
+        <div class="product-item" id="product-1">
+            <img src="/images/price1.jpg" alt="Product 1">
+            <h3 dit="rtl" style="text-align: center;">Product 1</h3>
+            <button class="buy-button" data-product-id="1">خرید</button>
+          </div>
+          <div class="product-item" id="product-2">
+            <img src="/images/price1.jpg" alt="Product 2">
+            <h3 dit="rtl" style="text-align: center;">Product 2</h3>
+            <button class="buy-button" data-product-id="2">خرید</button>
+          </div>
+          <!-- Add more product items here -->
+        <!-- Add more product items here -->
+      </div>
+    </div>
+
+    
+  </section>
+
+
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 style="font-size: 25px; color: red;" dit="rtl" style="text-align: center;">اطلاعات این محصول</h2>
+      <p id="product-info"></p>
+      <div class="modal-body">
+        <!-- Add your modal body content here -->
+      </div>
+    </div>
+  </div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+
+      $(".ham-burger, .nav ul li a").click(function(){
+       
+        $(".nav").toggleClass("open")
+
+        $(".ham-burger").toggleClass("active");
+      })      
+      $(".accordian-container").click(function(){
+      	$(".accordian-container").children(".body").slideUp();
+      	$(".accordian-container").removeClass("active")
+      	$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
+      	$(this).children(".body").slideDown();
+      	$(this).addClass("active")
+      	$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
+      })
+
+       $(".nav ul li a, .go-down").click(function(event){
+         if(this.hash !== ""){
+
+              event.preventDefault();
+
+              var hash=this.hash; 
+
+              $('html,body').animate({
+                scrollTop:$(hash).offset().top
+              },800 , function(){
+                 window.location.hash=hash;
+              });
+
+              // add active class in navigation
+              $(".nav ul li a").removeClass("active")
+              $(this).addClass("active")
+         }
+      })
+})
+
+</script>
+<script src="js/wow.min.js"></script>
+<script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       0,
+      }
+    );
+    wow.init();
+  </script>
+
+<script>
+const products = {
+  1: {
+    name: 'کراتین',
+    description: 'نمیدونم',
+    price: '10000 IRR'
+  },
+  2: {
+    name: 'Product 2',
+    description: 'This is the description of Product 2',
+    price: '15000 IRR'
+  }
+  // Add more products here
+};
+
+</script>
+
+<script>
+    // Get the modal box and its content
+    var modal = document.querySelector('.modal');
+    var modalContent = document.querySelector('.modal-content');
+    var closeButton = document.querySelector('.close');
+    var productInfo = document.querySelector('#product-info');
+  
+    // Add event listener to the "خرید" button
+    document.querySelectorAll('.buy-button').forEach(function(button) {
+      button.addEventListener('click', function() {
+        // Get the product ID from the button
+        const productId = button.getAttribute('data-product-id');
+  
+        // Display the product information in the modal box
+        const product = products[productId];
+        productInfo.innerHTML = `
+  <p id="product-name">اسم محصول: ${product.name}</p>
+  <p id="product-description">توضیحات: ${product.description}</p>
+  <p id="product-price">قیمت: ${product.price}</p>
+`;
+        
+        
+        // Show the modal box
+        modal.style.display = 'block';
+      });
+    });
+  
+    // Add event listener to the modal box to close it when clicked outside
+    window.addEventListener('click', function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+  
+    // Add event listener to the close button
+    closeButton.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+
+    
+  </script>
+
+  

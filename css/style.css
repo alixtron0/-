@@ -6,6 +6,7 @@ body{
 	margin:0;
 	padding:0;
 	overflow-x: hidden;
+	background-color: #000; /* or background-color: black; */
 }
 
 *{
@@ -1075,3 +1076,256 @@ flex: 0 0 100%;
 
 
 
+  .phome {
+	background-image: none;
+	padding:50px;
+	background-color: #000;
+  }
+.phome .go-down{
+  position: absolute;
+  bottom: 50px;
+  width: 26px;
+  height:40px;
+  border:1px solid #ffffff;
+  display: block;
+  border-radius:4px;
+  text-align: center;
+  left:50%;
+  margin-left: -13px;
+}
+.phome .go-down .fa{
+	color:#ffffff;
+	-webkit-animation: goDown 1s ease infinite;
+	animation: goDown 1s ease infinite;
+	float: right
+	text-align: right
+	direction: rtl;
+}
+@-webkit-keyframes goDown{
+	0%{transform: translateY(0);opacity:.5}
+	100%{transform: translateY(10px);}
+}
+@keyframes goDown{
+	0%{transform: translateY(0);opacity:.5}
+	100%{transform: translateY(10px);}
+}
+.phome .container{
+  -webkit-display: flex;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/**ئخنشئث**/
+.phome h1{
+	color:#ffffff;
+	font-size: 80px;
+	font-weight: 700;
+	 text-align: center;
+	text-transform: uppercase;
+	margin:0;
+}
+
+.phome h1 span{
+	color:#ff0000;;
+}
+
+@media only screen and (max-width: 480px) {
+	.phome h1 {
+		padding:20px;
+	  font-size: 40px; /* adjust font size for mobile phones */
+	}
+  }
+
+ /* Products Section Styles */
+/* Products Section Styles */
+.products {
+	background-color: #000000;
+	padding: 40px 0;
+	display: flex;
+	justify-content: center;
+	border: 1px solid #ff0000;
+  }
+  
+  .product-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 20px;
+	justify-content: center;
+  }
+  
+  .product-item {
+	background-color: #fff;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	text-align: right; /* add this line to align text to the right */
+	direction: rtl; /* add this line to change the direction to right-to-left */
+  }
+  
+  .product-item img {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	border-radius: 10px 10px 0 0;
+  }
+  
+  .product-item h3 {
+	font-size: 18px;
+	margin-top: 10px;
+	text-align: right; /* add this line to align text to the right */
+  }
+  
+  .product-item p {
+	font-size: 14px;
+	color: #666;
+	text-align: right; /* add this line to align text to the right */
+  }
+  
+  .product-item button {
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	display: block;
+	margin: 0 auto;
+	text-align: right; /* add this line to align text to the right */
+  }
+  
+  .product-item button:hover {
+	background-color: #444;
+  }
+  
+  /* Responsive Styles */
+  @media only screen and (max-width: 768px) {
+	.product-grid {
+	  grid-template-columns: repeat(2, 1fr);
+	}
+  }
+  
+  @media only screen and (max-width: 480px) {
+	.product-grid {
+	  grid-template-columns: repeat(1, 1fr);
+	}
+	.product-item {
+	  margin-bottom: 20px;
+	}
+  }
+  .product-grid.wow {
+	animation-name: fadeInUp;
+	animation-duration: 1s;
+  }
+
+ /* Style the modal box */
+.modal {
+	display: none; /* Hide the modal box by default */
+	position: fixed; /* Position the modal box fixed */
+	z-index: 1; /* Set the z-index to 1 */
+	left: 0;
+	top: 0;
+	width: 100%; /* Set the width to 100% */
+	height: 100%; /* Set the height to 100% */
+	overflow: auto; /* Add overflow auto */
+	background-color: rgba(0, 0, 0, 0.4); /* Add a dark background color */
+  }
+  
+  .modal-content {
+	background-color: #fefefe;
+	margin: 15% auto; /* Add margin to center the modal box */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Set the width to 80% */
+	border-radius: 10px;
+
+  }
+  
+  .close {
+	color: #000000;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  
+  /* Style the product items */
+  .product-item {
+	display: inline-block;
+	margin: 10px;
+	width: 200px; /* Set the width to 200px */
+	height: 250px; /* Set the height to 250px */
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: center;
+  }
+  
+  .product-item img {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	border-radius: 10px;
+  }
+  
+  .product-item h3 {
+	font-size: 18px;
+	margin-top: 10px;
+  }
+  
+  .buy-button {
+	background-color: #4CAF50;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  .buy-button:hover {
+	background-color: #3e8e41;
+  }
+  #product-info {
+	font-family: Arial, sans-serif;
+	font-size: 20px;
+	color: #000000;
+  }
+
+  .modal-content {
+	direction: rtl; /* Add this line to make the content RTL */
+	text-align: center; /* Add this line to center the content */
+	flex-direction: column; /* Add this line to make the content display in a column */
+	align-items: center; /* Add this line to center the content horizontally */
+  }
+  
+  .product-info {
+	display: flex; /* Add this line to make the product info display in a row */
+	flex-direction: row; /* Add this line to make the product info display in a row */
+	justify-content: center; /* Add this line to center the product info horizontally */
+	align-items: center; /* Add this line to center the product info vertically */
+  }
+  
+  .product-info p {
+	margin: 0 10px; /* Add some margin between the product info elements */
+  }
+  #product-name {
+	font-size: 20px; /* Increase the font size */
+	font-weight: bold; /* Make the text bold */
+	color: #000000; /* Change the text color to a darker shade */
+  }
+  #product-description {
+	font-size: 20px; /* Increase the font size */
+	font-weight: bold; /* Make the text bold */
+	color: #000000; /* Change the text color to a darker shade */
+  }
+  #product-price {
+	font-size: 20px; /* Increase the font size */
+	font-weight: bold; /* Make the text bold */
+	color: #000000; /* Change the text color to a darker shade */
+  }
